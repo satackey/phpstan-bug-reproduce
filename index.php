@@ -1,15 +1,30 @@
 <?php
 declare(strict_types=1);
 
-use Illuminate\Support\Collection;
+/**
+ * corresponds to IterableAggregate
+ * @template TKey
+ * @template TValue
+ */
+interface CollectionInterface {}
+
+// Library like Illuminate\Support\Collection, excluded from analyze
+// @phpstan-ignore-next-line
+class Collection implements CollectionInterface {}
+
+/**
+ * @template TKey
+ * @template TValue
+ * @implements CollectionInterface<TKey, TValue>
+ */
+class ExtendedCollection implements CollectionInterface {}
 
 class Announcement {}
 
 /**
- * @extends Collection<int, Announcement>
+ * @extends ExtendedCollection<int, Announcement>
  */
-class Announcements extends Collection {}
+class Announcements extends ExtendedCollection {}
 
-abstract class AnnouncementsStore {
-    abstract public static function get(): Announcements;
-}
+/** @var Announcements */
+$announcements = [];
