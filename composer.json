@@ -1,6 +1,6 @@
 {
     "require": {
-        "phpstan/phpstan": "0.12.80",
+        "phpstan/phpstan": "0.12.81",
         "illuminate/collections": "^8.74"
     }
 }
