@@ -1,0 +1,15 @@
+<?php
+
+namespace Illuminate\Support;
+
+/**
+ * @template TKey
+ * @template TValue
+ * @implements \IteratorAggregate<TKey, TValue>
+ */
+class Collection implements \IteratorAggregate
+{
+    public function getIterator()
+    {
+    }
+}
