@@ -1,6 +1,11 @@
 {
     "require": {
-        "phpstan/phpstan": "0.12.99",
-        "illuminate/collections": "^8.74"
+        "phpstan/phpstan": "^1.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Libraries\\": "libraries",
+            "Src\\": "src"
+        }
     }
 }
